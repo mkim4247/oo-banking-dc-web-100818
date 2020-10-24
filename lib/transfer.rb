@@ -9,7 +9,7 @@ class Transfer
   end
   
   def valid?
-    @sender.valid? && @receiver.valid?
+    sender.valid? && receiver.valid?
   end
   
   def execute_transaction
@@ -22,4 +22,6 @@ class Transfer
       "Transaction rejected. Please check your account balance."
     end
   end
+  
+  
 end
