@@ -13,7 +13,7 @@ class Transfer
   end
   
   def execute_transaction
-    if sender.valid? && sender.balance >= self.amount
+    if sender.valid? && self.status != 'complete' && sender.balance >= self.amount
         sender.balance -= self.amount
         receiver.balance += self.amount
         self.status = "complete"
